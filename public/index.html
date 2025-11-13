@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TaskFlow – Login | CodeAxis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="bg-gradient">
+  <header class="top-header">
+    <div class="logo-wrap">
+      <img src="/assets/logo.png" alt="CodeAxis logo" class="logo-img" />
+      <span class="logo-text">CodeAxis</span>
+    </div>
+  </header>
+
+  <main class="center-layout">
+    <section class="card login-card">
+      <h1 class="card-title">Welcome to TaskFlow!</h1>
+      <p class="subtitle">
+        Your productivity hub — sign in and take charge of your time.
+      </p>
+
+      <form id="loginForm" class="form">
+        <label class="field-label" for="email">Email Address</label>
+        <input id="email" type="email" class="input" placeholder="Enter your email" required />
+
+        <label class="field-label" for="password">Password</label>
+        <input id="password" type="password" class="input" placeholder="Enter your password" required />
+
+        <div class="row between mt-8">
+          <label class="remember-me">
+            <input type="checkbox" /> Remember me
+          </label>
+          <a href="#" class="link-sm">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn primary full mt-16">Log In</button>
+
+        <p id="loginError" class="error-text mt-8"></p>
+
+        <div class="divider mt-16">
+          <span>or</span>
+        </div>
+
+        <button type="button" class="btn secondary full mt-12" disabled>
+          <span class="google-icon">G</span>
+          Log in with Google (coming soon)
+        </button>
+
+        <p class="small-text mt-16">
+          New here?
+          <span class="link-sm">Create an account (via register API)</span>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2025 CodeAxis | All rights reserved
+  </footer>
+
+  <script src="/js/auth.js"></script>
+</body>
+</html>

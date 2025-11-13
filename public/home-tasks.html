@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TaskFlow – My Tasks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="bg-gradient">
+  <header class="top-header">
+    <div class="logo-wrap">
+      <img src="/assets/logo.png" alt="CodeAxis logo" class="logo-img" />
+      <span class="logo-text">CodeAxis</span>
+    </div>
+    <nav class="top-nav">
+      <a href="/home-tasks.html" class="nav-link active">My Tasks</a>
+      <a href="/add-task.html" class="nav-link">Add Task</a>
+      <a href="/calendar.html" class="nav-link">Calendar</a>
+      <a href="/settings.html" class="nav-link">Settings</a>
+      <button class="btn ghost" onclick="logout()">Log Out</button>
+    </nav>
+  </header>
+
+  <main class="page-content">
+    <h1 class="page-title">My Tasks</h1>
+
+    <section class="tasks-section">
+      <div id="tasksList" class="tasks-grid">
+       
+      </div>
+    </section>
+
+    <div class="floating-add">
+      <a href="/add-task.html" class="btn primary">+ Add Task</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    © 2025 CodeAxis | All rights reserved
+  </footer>
+
+  <script src="/js/auth.js"></script>
+  <script src="/js/tasks.js"></script>
+</body>
+</html>

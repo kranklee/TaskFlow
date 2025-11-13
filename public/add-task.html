@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TaskFlow – Add Task</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="bg-gradient">
+  <header class="top-header">
+    <div class="logo-wrap">
+      <img src="/assets/logo.png" alt="CodeAxis logo" class="logo-img" />
+      <span class="logo-text">CodeAxis</span>
+    </div>
+    <nav class="top-nav">
+      <a href="/home-tasks.html" class="nav-link">My Tasks</a>
+      <a href="/add-task.html" class="nav-link active">Add Task</a>
+      <a href="/calendar.html" class="nav-link">Calendar</a>
+      <a href="/settings.html" class="nav-link">Settings</a>
+      <button class="btn ghost" onclick="logout()">Log Out</button>
+    </nav>
+  </header>
+
+  <main class="page-content">
+    <h1 class="page-title">Add a New Task</h1>
+
+    <section class="card wide-card">
+      <form id="addTaskForm" class="form">
+        <label class="field-label" for="taskTitle">Task Title</label>
+        <input id="taskTitle" class="input" type="text" required />
+
+        <label class="field-label" for="taskDescription">Description</label>
+        <textarea id="taskDescription" class="input textarea" rows="3"></textarea>
+
+        <label class="field-label" for="dueDate">Due Date</label>
+        <input id="dueDate" class="input" type="date" />
+
+        <label class="field-label" for="priority">Priority</label>
+        <select id="priority" class="input">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <div class="row between mt-16">
+          <a href="/home-tasks.html" class="btn ghost">Cancel</a>
+          <button type="submit" class="btn primary">Save Task</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2025 CodeAxis | All rights reserved
+  </footer>
+
+  <script src="/js/auth.js"></script>
+  <script src="/js/tasks.js"></script>
+</body>
+</html>

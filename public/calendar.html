@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TaskFlow – Calendar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="bg-gradient">
+  <header class="top-header">
+    <div class="logo-wrap">
+      <img src="/assets/logo.png" alt="CodeAxis logo" class="logo-img" />
+      <span class="logo-text">CodeAxis</span>
+    </div>
+    <nav class="top-nav">
+      <a href="/home-tasks.html" class="nav-link">My Tasks</a>
+      <a href="/add-task.html" class="nav-link">Add Task</a>
+      <a href="/calendar.html" class="nav-link active">Calendar</a>
+      <a href="/settings.html" class="nav-link">Settings</a>
+      <button class="btn ghost" onclick="logout()">Log Out</button>
+    </nav>
+  </header>
+
+  <main class="page-content">
+    <h1 class="page-title">Calendar</h1>
+
+    <section class="card wide-card">
+      <p class="subtitle">
+        Simple preview calendar. For the first release we only show tasks grouped by due date.
+      </p>
+
+      <div id="calendarContainer" class="calendar-grid">
+        <!-- Filled by tasks.js -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2025 CodeAxis | All rights reserved
+  </footer>
+
+  <!-- Script'ler en sonda ve defer ile -->
+  <script src="/js/auth.js" defer></script>
+  <script src="/js/tasks.js" defer></script>
+</body>
+</html>
