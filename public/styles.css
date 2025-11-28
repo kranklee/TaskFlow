@@ -37,7 +37,7 @@ body {
   background-attachment: fixed;
 }
 
-/* Header */
+
 
 .top-header {
   display: flex;
@@ -66,7 +66,7 @@ body {
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
 
-/* Navigation */
+
 
 .top-nav {
   display: flex;
@@ -92,22 +92,23 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Layout helpers */
 
-.center-layout {
+
+.center-layout { /* Bu sınıf ana içeriği ortalar */
+  flex-grow: 1; /* main etiketi flex-grow ile dikeyde alanı kaplasın */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 16px 64px;
+  justify-content: center; /* Yatayda ortalama */
+  align-items: center; /* Dikeyde ortalama */
+  padding: 20px;
 }
 
-.page-content {
+.page-content { /* Bu sınıf eskiydi, .center-layout ile çakışabilir, kaldırabiliriz veya farklı amaçla kullanabiliriz */
   max-width: 1100px;
   margin: 0 auto 64px;
   padding: 0 16px;
 }
 
-.page-title {
+.page-title { /* Global sayfa başlığı, auth card dışındakiler için */
   color: #ffffff;
   font-size: 36px;
   text-align: left;
@@ -115,62 +116,64 @@ body {
   text-shadow: 0 4px 18px rgba(0, 0, 0, 0.7);
 }
 
-/* Card */
 
+/* --- KART GENİŞLİĞİ VE DÜZEN İYİLEŞTİRMELERİ --- */
 .card {
   background-color: var(--card-bg);
   border-radius: var(--radius-lg);
   border: 3px solid var(--card-border);
-  padding: 32px 32px 28px;
-  max-width: 420px;
+  padding: 32px 32px; /* Dikey ve yatay dolgu */
   width: 100%;
+  max-width: 400px; /* Tüm auth kartları için standart maksimum genişlik */
   box-shadow: var(--shadow-soft);
+  text-align: center; /* Kart içindeki başlık ve alt yazıları ortala */
 }
 
+/* Auth kartlarındaki başlıklar ve alt başlıklar */
+.card-title { /* login ve register sayfalarındaki h1 için */
+    font-size: 28px;
+    margin-bottom: 8px; /* Başlık ile alt başlık arasına boşluk */
+    color: var(--text-main);
+}
+
+.subtitle { /* login ve register sayfalarındaki p.subtitle için */
+    color: var(--text-muted);
+    font-size: 16px; /* Daha okunaklı */
+    margin-bottom: 30px; /* Alt başlık ile form arasına daha fazla boşluk */
+}
+
+/* Eski .login-card sınıfına artık margin-left: auto; gerek yok çünkü .center-layout ortalıyor */
 .login-card {
-  margin-left: auto;
+  /* margin-left: auto; */ /* Kaldırıldı */
 }
 
-.wide-card {
+.wide-card { /* Bu sınıfın kullanım amacı net değilse kaldırabiliriz, auth kartları için gerekmiyor */
   max-width: 900px;
 }
+/* --- KART GENİŞLİĞİ VE DÜZEN İYİLEŞTİRMELERİ SONU --- */
 
-.card-title {
-  font-size: 28px;
-  margin-bottom: 4px;
-}
 
-.card-subtitle {
-  font-size: 20px;
-  margin-bottom: 12px;
-}
-
-.subtitle {
-  color: var(--text-muted);
-  font-size: 14px;
-  margin-bottom: 24px;
-}
-
-/* Form */
-
+/* FORM DÜZENİ */
 .form {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 15px; /* Form alanları arasındaki dikey boşluğu artır */
+  text-align: left; /* Form içindeki metinleri sola hizala */
 }
 
 .field-label {
   font-size: 14px;
   font-weight: 600;
-  margin-top: 8px;
+  margin-top: 0; /* input-group-full içinde olduğu için margin-top'u sıfırla */
+  margin-bottom: 5px; /* Etiket ile input arasına boşluk */
 }
 
 .input {
-  margin-top: 4px;
-  padding: 10px 12px;
-  border-radius: 999px;
+  /* margin-top: 4px; */ /* input-group-full içinde olduğu için kaldırıldı */
+  padding: 12px 15px; /* Dolguyu artır */
+  border-radius: 8px; /* Daha köşeli */
   border: 2px solid #d3d6e1;
-  font-size: 14px;
+  font-size: 16px; /* Daha okunaklı */
   outline: none;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast),
     background-color var(--transition-fast);
@@ -196,25 +199,29 @@ body {
   justify-content: space-between;
 }
 
-.mt-8 {
-  margin-top: 8px;
+.mt-8 { margin-top: 8px; }
+.mt-12 { margin-top: 12px; }
+.mt-16 { margin-top: 16px; }
+
+/* Yeni Eklenecek: Form Gruplarını Düzenleme */
+.input-group-full {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* İçerideki input tam genişlikte olsun */
 }
 
-.mt-12 {
-  margin-top: 12px;
+/* Şifre ve Forgot password satırı için */
+.input-group-full .row.between {
+    margin-bottom: 5px; /* Label ve linkin altındaki boşluk */
 }
 
-.mt-16 {
-  margin-top: 16px;
-}
 
-/* Buttons */
-
+/* BUTONLAR */
 .btn {
   border: none;
-  border-radius: 999px;
-  padding: 10px 18px;
-  font-size: 14px;
+  border-radius: 8px; /* Input'larla uyumlu köşe */
+  padding: 12px 18px; /* Daha geniş dolgu */
+  font-size: 16px; /* Daha büyük metin */
   font-weight: 600;
   cursor: pointer;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast),
@@ -278,96 +285,41 @@ body {
   align-items: center;
   justify-content: center;
   font-weight: 700;
+  margin-right: 5px; /* Google metninden ayırmak için */
 }
 
-/* Tasks */
 
-.tasks-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
-}
-
-.task-card {
-  background-color: var(--card-bg);
-  border-radius: 14px;
-  border: 2px solid var(--card-border);
-  padding: 16px 18px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-}
-
-.task-card h3 {
-  font-size: 18px;
-  margin-bottom: 4px;
-}
-
-.task-card p {
-  font-size: 13px;
-  margin-top: 2px;
-}
-
-.floating-add {
-  position: fixed;
-  bottom: 32px;
-  right: 40px;
-}
-
-/* Calendar */
-
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 12px;
-  margin-top: 16px;
-}
-
-.calendar-day {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 10px 12px;
-  border: 2px solid #d3d6e1;
-}
-
-.calendar-day h3 {
-  font-size: 14px;
-  margin-bottom: 4px;
-}
-
-.calendar-day ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.calendar-day li {
-  font-size: 12px;
-}
-
-/* Misc */
-
+/* --- YARDIMCI METİNLER VE DİĞER ÖĞELER --- */
 .remember-me {
   font-size: 13px;
   color: var(--text-muted);
 }
 
-.link-sm {
-  font-size: 13px;
+.link-sm { /* Forgot password ve kayıt linkleri için */
+  font-size: 14px; /* Daha okunaklı */
   color: var(--accent);
+  text-decoration: none; /* Alt çizgiyi kaldır */
   cursor: pointer;
+  font-weight: 600;
 }
 
 .link-sm:hover {
   text-decoration: underline;
 }
 
-.small-text {
-  font-size: 12px;
+.small-text { /* New here? Create an account gibi alt yazılar */
+  font-size: 14px; /* Daha okunaklı */
   color: var(--text-muted);
+  text-align: center;
 }
 
-.error-text {
+.error-text { /* Frontend hata mesajları için */
   font-size: 13px;
   color: var(--danger);
-  min-height: 18px;
+  min-height: 18px; /* Mesaj yokken bile yer kaplamasını sağlar */
+  text-align: center;
+  margin-top: -5px; /* Form öğeleri arasındaki boşluğu düzenlemek için */
+  margin-bottom: 5px;
 }
 
 .divider {
@@ -376,6 +328,8 @@ body {
   gap: 10px;
   color: var(--text-muted);
   font-size: 12px;
+  margin-top: 10px; /* Butonlarla arasına boşluk */
+  margin-bottom: 10px;
 }
 
 .divider::before,
@@ -391,23 +345,25 @@ body {
   );
 }
 
-.divider-line {
+.divider-line { /* Bu sanırım kullanılmıyor, gerekliyse düzenlenebilir */
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin: 18px 0;
 }
 
-/* Footer */
+
 
 .footer {
   text-align: center;
   color: rgba(255, 255, 255, 0.8);
   font-size: 12px;
   padding: 16px;
+  margin-top: auto; /* Footer'ı alta itmek için */
 }
 
-/* Responsive */
 
+
+/* --- RESPONSIVE TASARIM --- */
 @media (max-width: 900px) {
   .top-header {
     flex-direction: column;
@@ -416,11 +372,24 @@ body {
     padding-inline: 24px;
   }
 
-  .login-card {
-    margin-inline: auto;
+  .login-card { /* center-layout olduğu için bu satıra gerek kalmadı */
+    /* margin-inline: auto; */
   }
 
-  .page-content {
+  .page-content { /* center-layout ile değiştirildi */
     margin-top: 16px;
+  }
+  
+  .card {
+      padding: 25px; /* Daha küçük ekranlarda dolguyu azalt */
+      max-width: 350px; /* Daha küçük ekranlarda maksimum genişliği azalt */
+  }
+  
+  .card-title {
+      font-size: 24px;
+  }
+  
+  .subtitle {
+      font-size: 14px;
   }
 }

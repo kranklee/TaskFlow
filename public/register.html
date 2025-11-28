@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>TaskFlow – Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="bg-gradient">
+    <header class="top-header">
+        <div class="logo-wrap">
+            <img src="/assets/logo.png" alt="CodeAxis logo" class="logo-img" />
+            <span class="logo-text">CodeAxis</span>
+        </div>
+    </header>
+
+    <main class="center-layout">
+        <section class="card wide-card" style="max-width: 450px;">
+            <h1 class="card-title">Create your TaskFlow account</h1>
+            <p class="subtitle">
+                Sign up with your details to start managing your tasks.
+            </p>
+
+            <form id="registerForm" class="form">
+                <div class="input-group-full">
+                    <label class="field-label" for="registerFullName">Full Name</label>
+                    <input
+                        id="registerFullName"
+                        type="text"
+                        class="input"
+                        placeholder="John Carter"
+                        required
+                    />
+                </div>
+
+                <div class="input-group-full">
+                    <label class="field-label" for="registerEmail">Email Address</label>
+                    <input
+                        id="registerEmail"
+                        type="email"
+                        class="input"
+                        placeholder="john@example.com"
+                        required
+                    />
+                </div>
+
+                <div class="input-group-full">
+                    <label class="field-label" for="registerPassword">Password</label>
+                    <input
+                        id="registerPassword"
+                        type="password"
+                        class="input"
+                        placeholder="Minimum 6 characters"
+                        minlength="6"
+                        required
+                    />
+                </div>
+                
+                <p id="registerError" class="error-text"></p>
+
+                <button type="submit" class="btn primary mt-12 full">
+                    Sign Up
+                </button>
+
+                <p class="small-text mt-16" style="text-align: center;">
+                    Already have an account?
+                    <a href="/index.html" class="link-sm">Back to Login</a>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        © 2025 CodeAxis | All rights reserved
+    </footer>
+
+    <script src="/js/auth.js"></script>
+</body>
+</html>

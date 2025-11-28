@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Login Success</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="bg-gradient center-layout">
+    <section class="card" style="max-width: 350px;">
+        <h1 class="card-title">Logging In...</h1>
+        <p class="subtitle" id="status">Please wait, authentication is being finalized...</p>
+    </section>
+
+    <script>
+        
+        function saveToken(token) {
+            localStorage.setItem("taskflow_token", token);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const token = params.get('token');
+            const fullName = params.get('fullName');
+            
+            const statusElement = document.getElementById('status');
+            
+            if (token) {
+                saveToken(token);
+                statusElement.textContent = `Welcome, ${fullName || 'User'}! Redirecting...`;
+                
+               
+                setTimeout(() => {
+                    window.location.href = '/home-tasks.html';
+                }, 500); 
+            } else {
+                statusElement.textContent = 'Failed to retrieve token. Login unsuccessful.';
+                setTimeout(() => {
+                    window.location.href = '/index.html';
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
